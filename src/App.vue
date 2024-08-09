@@ -1,10 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Hero from './components/Hero.vue';
 </script>
 
 <template>
-  <h1>Hello World</h1>
- 
+  <Hero />
 </template>
 
 <style scoped>
