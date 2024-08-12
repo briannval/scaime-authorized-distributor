@@ -12,6 +12,9 @@
           >
             Our Catalogue
           </h2>
+          <span class="font-light italic text-md text-primary mb-2 block">
+            Note: Click on each product to view more
+          </span>
         </div>
       </div>
 
