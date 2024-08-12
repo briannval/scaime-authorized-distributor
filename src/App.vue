@@ -7,10 +7,10 @@ import Services from './components/Services.vue';
 <template>
   <Navbar />
   <Hero />
-  <section id="about">
+  <section id="services">
     <Services />
   </section>
-  <section id="products"></section>
+  <section id="catalogue"></section>
   <section id="contact"></section>
 </template>
 
