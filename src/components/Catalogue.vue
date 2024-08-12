@@ -110,7 +110,7 @@
         <div class="flex justify-end p-4 border-t dark:border-gray-600">
           <button
             @click="closeModal"
-            class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800"
+            class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-500"
           >
             Close
           </button>
