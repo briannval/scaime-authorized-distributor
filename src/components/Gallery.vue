@@ -1,7 +1,7 @@
 <template>
-  <section class="py-8 lg:pt-[20px]">
+  <section class="py-8 lg:pt-[20px] my-20">
     <div class="container mx-auto max-w-screen-lg">
-      <div class="flex flex-wrap justify-center">
+      <div class="flex flex-wrap justify-center mx-8">
         <div class="grid gap-4">
           <div class="grid-cols-5">
             <img

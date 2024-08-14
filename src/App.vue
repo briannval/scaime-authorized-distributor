@@ -6,6 +6,7 @@ import Catalogue from "./components/Catalogue.vue";
 import Footer from "./components/Footer.vue";
 import Gallery from "./components/Gallery.vue";
 import Video from "./components/Video.vue";
+import Contact from "./components/Contact.vue";
 </script>
 
 <template>
@@ -19,7 +20,9 @@ import Video from "./components/Video.vue";
     <Catalogue />
   </section>
   <Gallery />
-  <section id="contact"></section>
+  <section id="contact">
+    <Contact />
+  </section>
   <Footer />
 </template>
 
