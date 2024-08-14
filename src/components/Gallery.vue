@@ -44,6 +44,6 @@ const chooseHighlight = (i) => {
 onMounted(() => {
   setInterval(() => {
     highlightImage.value = (highlightImage.value + 1) % images.length;
-  }, 2000);
+  }, 8000);
 });
 </script>
