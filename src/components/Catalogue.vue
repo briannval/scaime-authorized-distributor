@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 lg:pt-[20px]">
+  <section class="py-8 lg:pt-[20px] my-12">
     <div class="container mx-auto max-w-screen-xl">
       <!-- Heading -->
       <div class="w-full px-4">
