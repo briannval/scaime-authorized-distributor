@@ -5,6 +5,7 @@ import Services from "./components/Services.vue";
 import Catalogue from "./components/Catalogue.vue";
 import Footer from "./components/Footer.vue";
 import Gallery from "./components/Gallery.vue";
+import Video from "./components/Video.vue";
 </script>
 
 <template>
@@ -13,10 +14,11 @@ import Gallery from "./components/Gallery.vue";
   <section id="services">
     <Services />
   </section>
-  <Gallery />
+  <Video />
   <section id="catalogue">
     <Catalogue />
   </section>
+  <Gallery />
   <section id="contact"></section>
   <Footer />
 </template>
