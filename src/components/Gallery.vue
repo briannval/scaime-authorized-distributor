@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const highlightImage = ref(0);
 
@@ -40,4 +40,10 @@ const images = [
 const chooseHighlight = (i) => {
   highlightImage.value = i;
 };
+
+onMounted(() => {
+  setInterval(() => {
+    highlightImage.value = (highlightImage.value + 1) % images.length;
+  }, 2000);
+});
 </script>
