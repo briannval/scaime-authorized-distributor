@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 lg:pt-[20px] mb-20">
+  <section class="py-8 lg:pt-[20px] mb-20 mx-8">
     <div class="container mx-auto max-w-screen-xl">
       <div class="flex flex-wrap justify-center">
         <div class="w-full px-4">

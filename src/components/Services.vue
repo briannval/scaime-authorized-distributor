@@ -1,7 +1,7 @@
 <template>
-  <section class="py-8 lg:pt-[20px] mb-20">
+  <section class="py-8 lg:pt-[20px] mb-20 mx-8">
     <div class="container mx-auto max-w-screen-xl">
-      <div class="flex flex-wrap justify-center -mx-4">
+      <div class="flex flex-wrap justify-center mx-4">
         <div class="w-full px-4">
           <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
             <span class="font-semibold text-lg text-primary mb-2 block">
