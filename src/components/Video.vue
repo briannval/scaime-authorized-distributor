@@ -1,10 +1,10 @@
 <template>
   <section class="py-20">
     <div
-      class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[240px] max-w-[420px] md:h-[350px] md:max-w-[700px] xl:h-[588px] xl:max-w-[1024px]"
+      class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[220px] max-w-[380px] md:h-[350px] md:max-w-[700px] xl:h-[588px] xl:max-w-[1024px]"
     >
       <div
-        class="rounded-lg overflow-hidden h-[216px] md:h-[326px] xl:h-[556px] bg-white"
+        class="rounded-lg overflow-hidden h-[196px] md:h-[326px] xl:h-[556px] bg-white"
       >
         <iframe
           class="w-full h-full"
@@ -18,10 +18,10 @@
       </div>
     </div>
     <div
-      class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[26px] max-w-[502px] md:h-[34px] md:max-w-[802px] xl:h-[42px] xl:max-w-[1194px]"
+      class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[24px] max-w-[462px] md:h-[34px] md:max-w-[802px] xl:h-[42px] xl:max-w-[1194px]"
     >
       <div
-        class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[86px] h-[7px] md:w-[144px] md:h-[11px] xl:w-[192px] xl:h-[16px] bg-gray-800"
+        class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[76px] h-[6px] md:w-[144px] md:h-[11px] xl:w-[192px] xl:h-[16px] bg-gray-800"
       ></div>
     </div>
   </section>
