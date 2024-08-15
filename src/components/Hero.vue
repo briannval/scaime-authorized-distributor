@@ -7,7 +7,7 @@
         <h1
           class="mb-4 text-5xl font-extrabold tracking-tight leading-none xl:text-7xl dark:text-white"
         >
-          The Authorized <br />Scaime Reseller.
+          The Authorized <br />Scaime Distributor.
         </h1>
         <p
           class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-400"
