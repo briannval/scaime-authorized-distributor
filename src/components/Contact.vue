@@ -17,26 +17,22 @@
       </div>
       <form class="max-w-xl mx-auto">
         <div class="mb-6">
-          <label
-            for="small-input"
-            class="block mb-2 text-md font-bold text-gray-900"
+          <label for="name" class="block mb-2 text-md font-bold text-gray-900"
             >Your Name</label
           >
           <input
             type="text"
-            id="small-input"
+            id="name"
             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-gray-500 focus:border-gray-500 focus:border-2 focus:outline-none"
           />
         </div>
         <div class="mb-6">
-          <label
-            for="small-input"
-            class="block mb-2 text-md font-bold text-gray-900"
-            >Small input</label
+          <label for="email" class="block mb-2 text-md font-bold text-gray-900"
+            >Your Email</label
           >
           <input
-            type="text"
-            id="small-input"
+            type="email"
+            id="email"
             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-gray-500 focus:border-gray-500 focus:border-2 focus:outline-none"
           />
         </div>
@@ -44,7 +40,7 @@
           <label
             for="message"
             class="block mb-2 text-md font-bold text-gray-900"
-            >Your message</label
+            >Your Message</label
           >
           <textarea
             id="message"
