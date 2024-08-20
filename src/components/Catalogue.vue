@@ -123,6 +123,12 @@
 <script setup>
 import { ref } from "vue";
 
+const catalogue = ref({
+  "Load Cells": {},
+  "Mounting Kits": {},
+  Electronics: {},
+});
+
 const columns = ref(["Product", "Color", "Weight", "Price"]);
 
 const data = ref([

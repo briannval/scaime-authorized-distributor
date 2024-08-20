@@ -19,16 +19,11 @@
         <div
           v-for="(service, index) in services"
           :key="index"
-          class="w-full md:w-1/2 lg:w-1/3 px-4"
+          class="w-full md:w-1/2 lg:w-1/3 px-4 h-full"
         >
           <div
             class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg mb-8 text-center"
           >
-            <div
-              class="w-[70px] h-[70px] flex items-center justify-center bg-primary rounded-2xl mb-8 mx-auto"
-            >
-              <!-- SVG Icon -->
-            </div>
             <h4 class="font-semibold text-xl text-dark mb-3">
               {{ service.title }}
             </h4>
@@ -48,23 +43,28 @@ import { ref } from "vue";
 const services = ref([
   {
     title: "Capacity-based solutions",
-    description: "",
+    description:
+      "We offer recommendations for optimum capacity without sacrificing precision and quality.",
   },
   {
     title: "Flexible mounting methods",
-    description: "",
+    description:
+      "Our various mounting kits allow different load cells to be used in diverse scenarios flexibly.",
   },
   {
     title: "Digital and Analogue",
-    description: "",
+    description:
+      "We offer load cells with either digital to analogue output, integrable with our or your own electronics.",
   },
   {
     title: "Cost saving alternatives",
-    description: "",
+    description:
+      "Utilize our fixed bearings to for horizontal tank weighing to cut costs and increase efficiency.",
   },
   {
-    title: "Accurate strain gauges",
-    description: "",
+    title: "Numerous use cases",
+    description:
+      "From storage, material supply, manufacturing, packaging, and control, we've got you covered.",
   },
 ]);
 </script>
