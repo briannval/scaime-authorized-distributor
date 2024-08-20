@@ -57,11 +57,15 @@
                 scope="row"
                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
               >
-                {{ item.product }}
+                {{ item[0] }}
               </th>
-              <td class="px-6 py-4">{{ item.color }}</td>
-              <td class="px-6 py-4">{{ item.weight }}</td>
-              <td class="px-6 py-4">{{ item.price }}</td>
+              <td
+                v-for="(cell, index) in item.slice(1)"
+                class="px-6 py-4"
+                :key="index"
+              >
+                {{ cell }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -69,6 +73,7 @@
     </div>
 
     <!-- Modal -->
+    <!--
     <div
       v-if="showModal"
       @click.self="showModal = false"
@@ -107,7 +112,6 @@
         </div>
         <div class="p-4">
           <img src="/main-product.jpg" />
-          <!-- Change later -->
           <p class="text-lg font-bold text-gray-900 dark:text-white">
             {{ selectedProduct.product }}
           </p>
@@ -131,11 +135,12 @@
         </div>
       </div>
     </div>
+      -->
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import axios from "axios";
 
 const apiKey = import.meta.env.VITE_GSHEET_API_KEY;
@@ -145,19 +150,29 @@ const sheets = ref(["Load Cells", "Mounting Kits", "Electronics"]);
 
 const activeSheet = ref("Load Cells");
 
+const columns = ref([]);
+
+const data = ref([]);
+
 const fetchData = async (sheetName) => {
   try {
-    const range = `'${sheetName}'!A1:E6`; // Adjust range as needed
-    console.log(range);
-    const response = await axios.get(
-      `https://sheets.googleapis.com/v4/spreadsheets/${googleSheetId}/values/${range}?key=${apiKey}`
-    );
-    console.log(response.data.values);
-    /*
+    let cellRange;
+    switch (sheetName) {
+      case "Load Cells":
+        cellRange = "A1:E3";
+        break;
+      case "Mounting Kits":
+        cellRange = "A1:C2";
+        break;
+      case "Electronics":
+        cellRange = "A1:B2";
+        break;
+    }
+    const range = `'${sheetName}'!${cellRange}`; // Adjust range as needed
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${googleSheetId}/values/${range}?key=${apiKey}`;
+    const response = await axios.get(url);
     const rows = response.data.values;
-    columns.value = rows[0];
-    data.value = rows.slice(1);
-    */
+    (columns.value = rows[0]), (data.value = rows.slice(1));
   } catch (error) {
     console.error("Error fetching data from Google Sheets:", error);
   }
@@ -168,40 +183,6 @@ const handleChange = (e) => {
   fetchData(activeSheet.value);
 };
 
-const columns = ref(["Product", "Color", "Weight", "Price"]);
-
-const data = ref([
-  {
-    product: "Product 1",
-    color: "Gray",
-    weight: "100",
-    price: "$2999",
-  },
-  {
-    product: "Product 2",
-    color: "Silver",
-    weight: "80",
-    price: "$1399",
-  },
-  {
-    product: "Product 3",
-    color: "Black",
-    weight: "70",
-    price: "$1199",
-  },
-  {
-    product: "Product 4",
-    color: "Blue",
-    weight: "85",
-    price: "$1499",
-  },
-  {
-    product: "Product 5",
-    color: "Rose Gold",
-    weight: "75",
-    price: "$1099",
-  },
-]);
 // Modal visibility state
 const showModal = ref(false);
 
@@ -218,4 +199,6 @@ const openModal = (product) => {
 const closeModal = () => {
   showModal.value = false;
 };
+
+fetchData("Load Cells");
 </script>
