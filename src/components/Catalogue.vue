@@ -3,7 +3,7 @@
     <div class="container mx-auto max-w-screen-xl">
       <!-- Heading -->
       <div class="w-full px-4">
-        <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+        <div class="text-center mx-auto mb-6 lg:mb-8 max-w-[510px]">
           <span class="font-semibold text-lg text-primary mb-2 block">
             High Quality Products
           </span>
@@ -17,6 +17,20 @@
           </span>
         </div>
       </div>
+
+      <!-- Select-->
+
+      <form class="max-w-sm mx-auto my-8">
+        <select
+          id="countries"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          @change="handleChange($event)"
+        >
+          <option v-for="(sheet, index) in sheets" :value="sheet" :key="index">
+            {{ sheet }}
+          </option>
+        </select>
+      </form>
 
       <!-- Table -->
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -122,12 +136,37 @@
 
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
 
-const catalogue = ref({
-  "Load Cells": {},
-  "Mounting Kits": {},
-  Electronics: {},
-});
+const apiKey = import.meta.env.VITE_GSHEET_API_KEY;
+const googleSheetId = import.meta.env.VITE_GSHEET_ID;
+
+const sheets = ref(["Load Cells", "Mounting Kits", "Electronics"]);
+
+const activeSheet = ref("Load Cells");
+
+const fetchData = async (sheetName) => {
+  try {
+    const range = `'${sheetName}'!A1:E6`; // Adjust range as needed
+    console.log(range);
+    const response = await axios.get(
+      `https://sheets.googleapis.com/v4/spreadsheets/${googleSheetId}/values/${range}?key=${apiKey}`
+    );
+    console.log(response.data.values);
+    /*
+    const rows = response.data.values;
+    columns.value = rows[0];
+    data.value = rows.slice(1);
+    */
+  } catch (error) {
+    console.error("Error fetching data from Google Sheets:", error);
+  }
+};
+
+const handleChange = (e) => {
+  activeSheet.value = e.target.value;
+  fetchData(activeSheet.value);
+};
 
 const columns = ref(["Product", "Color", "Weight", "Price"]);
 
