@@ -10,7 +10,7 @@
               alt=""
             />
           </div>
-          <div class="grid grid-cols-5 gap-4">
+          <div class="grid grid-cols-4 gap-4">
             <div
               v-for="(image, index) in images"
               @click="chooseHighlight(index)"
@@ -34,7 +34,6 @@ const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
 ];
 
 const chooseHighlight = (i) => {
