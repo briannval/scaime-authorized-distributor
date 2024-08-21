@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar.vue";
 import Services from "./components/Services.vue";
 import Catalogue from "./components/Catalogue.vue";
 import Footer from "./components/Footer.vue";
-import Gallery from "./components/Gallery.vue";
+import Certifications from "./components/Certifications.vue";
 import Video from "./components/Video.vue";
 import Contact from "./components/Contact.vue";
 </script>
@@ -19,7 +19,7 @@ import Contact from "./components/Contact.vue";
   <section id="catalogue">
     <Catalogue />
   </section>
-  <Gallery />
+  <Certifications />
   <section id="contact">
     <Contact />
   </section>
