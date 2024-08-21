@@ -59,10 +59,10 @@
       <!-- Table -->
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg" v-else>
         <table
-          class="w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400"
+          class="w-full text-sm md:text-md text-left rtl:text-right text-gray-500 dark:text-gray-400"
         >
           <thead
-            class="text-lg text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+            class="text-md md:text-lg text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
           >
             <tr>
               <th scope="col" class="px-6 py-3" v-for="column in columns">
