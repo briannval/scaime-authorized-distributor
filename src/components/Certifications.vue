@@ -1,7 +1,22 @@
 <template>
   <section class="py-8 lg:pt-[20px] my-20">
     <div class="container mx-auto max-w-screen-lg">
-      <div class="flex flex-wrap justify-center mx-8">
+      <!-- Heading-->
+      <div class="w-full px-4">
+        <div class="text-center mx-auto mb-6 lg:mb-8 max-w-[510px]">
+          <span class="font-semibold text-lg text-primary mb-2 block">
+            Trust On Excellence
+          </span>
+          <h2
+            class="font-extrabold text-3xl sm:text-4xl md:text-[40px] text-dark"
+          >
+            Our Certifications
+          </h2>
+        </div>
+      </div>
+
+      <!-- Certfications -->
+      <div class="flex flex-wrap justify-center m-8">
         <div class="flex flex-col items-center justify-center">
           <img
             class="h-72 w-72 md:h-96 md:w-96 rounded-lg object-contain mb-8"
