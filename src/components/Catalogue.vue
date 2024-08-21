@@ -179,23 +179,26 @@ const columns = ref([]);
 const data = ref([]);
 const loading = ref(true);
 
+const MAX_CELL_VALUE = 99
+
 const fetchData = async (sheetName) => {
   try {
     loading.value = true;
     let cellRange;
     switch (sheetName) {
       case "Load Cells":
-        cellRange = "A1:E3";
+        cellRange = `A1:E${MAX_CELL_VALUE}`;
         break;
       case "Mounting Kits":
-        cellRange = "A1:C2";
+        cellRange = `A1:C${MAX_CELL_VALUE}`;
         break;
       case "Electronics":
-        cellRange = "A1:B2";
+        cellRange = `A1:F${MAX_CELL_VALUE}`;
         break;
     }
     const range = `'${sheetName}'!${cellRange}`; // Adjust range as needed
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${googleSheetId}/values/${range}?key=${apiKey}`;
+    console.log(url)
     const response = await axios.get(url);
     const rows = response.data.values;
     (columns.value = rows[0]), (data.value = rows.slice(1));
