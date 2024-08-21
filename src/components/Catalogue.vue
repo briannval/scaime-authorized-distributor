@@ -134,12 +134,7 @@
           </button>
         </div>
         <div class="p-4">
-          <img
-            :src="selectedProduct.image"
-            :alt="selectedProduct.cells[0]"
-            width="300px"
-            height="300px"
-          />
+          <img :src="selectedProduct.image" :alt="selectedProduct.cells[0]" />
           <p class="font-bold text-xl text-gray-900 dark:text-white">
             {{ selectedProduct.cells[0] }}
           </p>
