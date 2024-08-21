@@ -67,6 +67,7 @@ import { ref } from "vue";
 const links = ref([
   { href: "#services", text: "Services" },
   { href: "#catalogue", text: "Catalogue" },
+  { href: "#certifications", text: "Certifications" },
   { href: "#contact", text: "Contact" },
 ]);
 
@@ -92,6 +93,7 @@ html {
 
 #services,
 #catalogue,
+#certifications,
 #contact {
   scroll-margin-top: 4rem;
 }
