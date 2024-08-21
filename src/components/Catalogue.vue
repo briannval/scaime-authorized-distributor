@@ -81,10 +81,10 @@
                 scope="row"
                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
               >
-                {{ item[0] }}
+                {{ item.cells[0] }}
               </th>
               <td
-                v-for="(cell, index) in item.slice(1)"
+                v-for="(cell, index) in item.cells.slice(1)"
                 class="px-6 py-4"
                 :key="index"
               >
@@ -97,7 +97,6 @@
     </div>
 
     <!-- Modal -->
-    <!--
     <div
       v-if="showModal"
       @click.self="showModal = false"
@@ -136,17 +135,14 @@
         </div>
         <div class="p-4">
           <img src="/main-product.jpg" />
-          <p class="text-lg font-bold text-gray-900 dark:text-white">
-            {{ selectedProduct.product }}
+          <p class="font-bold text-xl text-gray-900 dark:text-white">
+            {{ selectedProduct.cells[0] }}
           </p>
-          <p class="text-md text-gray-500 dark:text-gray-400">
-            Color: {{ selectedProduct.color }}
-          </p>
-          <p class="text-md text-gray-500 dark:text-gray-400">
-            Weight: {{ selectedProduct.weight }}
-          </p>
-          <p class="text-md text-gray-500 dark:text-gray-400">
-            Price: {{ selectedProduct.price }}
+          <p
+            v-for="(cell, index) in selectedProduct.cells.slice(1)"
+            class="text-lg text-gray-900 dark:text-white"
+          >
+            {{ columns[index] }}: {{ cell }}
           </p>
         </div>
         <div class="flex justify-end p-4 border-t dark:border-gray-600">
@@ -159,7 +155,6 @@
         </div>
       </div>
     </div>
-      -->
   </section>
 </template>
 
@@ -179,7 +174,7 @@ const columns = ref([]);
 const data = ref([]);
 const loading = ref(true);
 
-const MAX_CELL_VALUE = 99
+const MAX_CELL_VALUE = 99;
 
 const fetchData = async (sheetName) => {
   try {
@@ -187,21 +182,27 @@ const fetchData = async (sheetName) => {
     let cellRange;
     switch (sheetName) {
       case "Load Cells":
-        cellRange = `A1:E${MAX_CELL_VALUE}`;
+        cellRange = `A1:F${MAX_CELL_VALUE}`;
         break;
       case "Mounting Kits":
-        cellRange = `A1:C${MAX_CELL_VALUE}`;
+        cellRange = `A1:D${MAX_CELL_VALUE}`;
         break;
       case "Electronics":
-        cellRange = `A1:F${MAX_CELL_VALUE}`;
+        cellRange = `A1:G${MAX_CELL_VALUE}`;
         break;
     }
     const range = `'${sheetName}'!${cellRange}`; // Adjust range as needed
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${googleSheetId}/values/${range}?key=${apiKey}`;
-    console.log(url)
+    console.log(url);
     const response = await axios.get(url);
     const rows = response.data.values;
-    (columns.value = rows[0]), (data.value = rows.slice(1));
+    (columns.value = rows[0].slice(0, -1)),
+      (data.value = rows.slice(1).map((r) => ({
+        cells: r.slice(0, -1),
+        image: r.slice(-1)[0],
+      })));
+    console.log(columns.value);
+    console.log(data.value);
   } catch (error) {
     console.error("Error fetching data from Google Sheets:", error);
   } finally {
