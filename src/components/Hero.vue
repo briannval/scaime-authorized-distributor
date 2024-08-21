@@ -1,9 +1,9 @@
 <template>
   <section class="bg-white dark:bg-gray-900">
     <div
-      class="grid max-w-screen-xl py-8 mx-auto lg:py-16 lg:grid-cols-12 min-h-[100vh]"
+      class="grid max-w-screen-xl py-8 px-8 mx-auto lg:py-16 lg:px-0 lg:grid-cols-12 min-h-[100vh]"
     >
-      <div class="mx-auto md:mr-auto md:ml-0 place-self-center lg:col-span-7">
+      <div class="mx-auto xl:mr-auto xl:ml-0 place-self-center lg:col-span-7">
         <h1
           class="mb-4 text-5xl font-extrabold tracking-tight leading-none xl:text-7xl dark:text-white"
         >
