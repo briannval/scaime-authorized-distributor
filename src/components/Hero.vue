@@ -15,7 +15,7 @@
           {{ currPhrase }} &nbsp;
         </p>
         <a
-          href="#"
+          href="#video"
           class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-gray-700 hover:bg-gray-800"
         >
           Learn More
@@ -97,3 +97,9 @@ function loop() {
 }
 loop();
 </script>
+
+<style>
+#video {
+  scroll-margin-top: 4rem;
+}
+</style>

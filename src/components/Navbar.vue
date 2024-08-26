@@ -72,7 +72,8 @@ const links = ref([
 ]);
 
 const backToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  window.location.href = "#";
 };
 
 const isMobileOpen = ref(false);

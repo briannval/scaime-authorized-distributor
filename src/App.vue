@@ -14,7 +14,7 @@ const sections = [
   { id: null, component: Navbar },
   { id: null, component: Hero },
   { id: "services", component: Services },
-  { id: null, component: Video },
+  { id: "video", component: Video },
   { id: "catalogue", component: Catalogue },
   { id: "certifications", component: Certifications },
   { id: "contact", component: Contact },
